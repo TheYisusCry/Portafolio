@@ -19,6 +19,8 @@
   --accent-emerald: #10b981;
   --accent-yellow: #eab308;
   
+  --gradient-primary: linear-gradient(135deg, var(--primary-purple), var(--accent-blue));
+  
   --text-main: #f3f4f6;
   --text-muted: #9ca3af;
   --text-dim: #6b7280;

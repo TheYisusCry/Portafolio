@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const accessKey = PORTFOLIO_CONFIG.web3formsAccessKey;
 
       if (!accessKey || accessKey.includes("PON_TU")) {
-        showToast('d0650249-afed-4eaa-97b2-c1775121b5ce', 'error');
+        showToast('⚠️ Por favor configura tu clave de Web3Forms en script.js', 'error');
         return;
       }
 
@@ -197,6 +197,12 @@ document.addEventListener('DOMContentLoaded', () => {
       const cardWidth = projectsTrack.querySelector('.project-card')?.offsetWidth || 340;
       projectsTrack.scrollBy({ left: cardWidth + 32, behavior: 'smooth' });
     });
+  }
+
+  // 8. Cierre del Modal de Proyectos
+  const closeProjectBtn = document.getElementById('close-project-btn');
+  if (closeProjectBtn) {
+    closeProjectBtn.addEventListener('click', closeProjectModal);
   }
 });
 
@@ -284,9 +290,3 @@ function closeProjectModal() {
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  const closeProjectBtn = document.getElementById('close-project-btn');
-  if (closeProjectBtn) {
-    closeProjectBtn.addEventListener('click', closeProjectModal);
-  }
-});
