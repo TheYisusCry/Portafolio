@@ -1221,6 +1221,12 @@ button {
   transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
+.toast.error {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  border-color: rgba(248, 113, 113, 0.4);
+  box-shadow: 0 10px 30px rgba(239, 68, 68, 0.45), 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
 .toast.show {
   transform: translateY(0);
   opacity: 1;

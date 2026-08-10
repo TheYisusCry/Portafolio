@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const accessKey = PORTFOLIO_CONFIG.web3formsAccessKey;
 
       if (!accessKey || accessKey.includes("PON_TU")) {
-        showToast('d0650249-afed-4eaa-97b2-c1775121b5ce');
+        showToast('d0650249-afed-4eaa-97b2-c1775121b5ce', 'error');
         return;
       }
 
@@ -163,13 +163,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const data = await response.json();
 
         if (data.success) {
-          showToast('¡Gracias! Tu mensaje ha sido enviado correctamente.');
+          showToast('¡Gracias! Tu mensaje ha sido enviado correctamente.', 'success');
           contactForm.reset();
         } else {
-          showToast('⚠️ Ocurrió un error.');
+          showToast('⚠️ Ocurrió un error al enviar el mensaje.', 'error');
         }
       } catch (err) {
-        showToast('⚠️ Error de conexión al enviar el mensaje.');
+        showToast('⚠️ Error de conexión al enviar el mensaje.', 'error');
       } finally {
         if (submitBtn) {
           submitBtn.disabled = false;
@@ -184,10 +184,15 @@ document.addEventListener('DOMContentLoaded', () => {
 /* ------------------------------------------------------------------------
    MOSTRAR NOTIFICACIÓN TOAST
    ------------------------------------------------------------------------ */
-function showToast(message) {
+function showToast(message, type = 'success') {
   const toast = document.getElementById('toast');
   if (toast) {
     toast.innerText = message;
+    if (type === 'error') {
+      toast.classList.add('error');
+    } else {
+      toast.classList.remove('error');
+    }
     toast.classList.add('show');
     setTimeout(() => {
       toast.classList.remove('show');
