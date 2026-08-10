@@ -179,6 +179,25 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  /* ------------------------------------------------------------------------
+     7. CARRUSEL MANUAL DE PROYECTOS (SIN TEMPORIZADOR)
+     ------------------------------------------------------------------------ */
+  const projectsTrack = document.getElementById('projects-track');
+  const prevBtn = document.getElementById('projects-prev-btn');
+  const nextBtn = document.getElementById('projects-next-btn');
+
+  if (projectsTrack && prevBtn && nextBtn) {
+    prevBtn.addEventListener('click', () => {
+      const cardWidth = projectsTrack.querySelector('.project-card')?.offsetWidth || 340;
+      projectsTrack.scrollBy({ left: -(cardWidth + 32), behavior: 'smooth' });
+    });
+
+    nextBtn.addEventListener('click', () => {
+      const cardWidth = projectsTrack.querySelector('.project-card')?.offsetWidth || 340;
+      projectsTrack.scrollBy({ left: cardWidth + 32, behavior: 'smooth' });
+    });
+  }
 });
 
 /* ------------------------------------------------------------------------
