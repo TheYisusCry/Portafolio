@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const accessKey = PORTFOLIO_CONFIG.web3formsAccessKey;
 
       if (!accessKey || accessKey.includes("PON_TU")) {
-        showToast('⚠️ Agrega tu Web3Forms Access Key en PORTFOLIO_CONFIG (script.js)');
+        showToast('d0650249-afed-4eaa-97b2-c1775121b5ce');
         return;
       }
 
