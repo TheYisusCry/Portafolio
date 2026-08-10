@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ismael Jose Batista | Estudiante de Ing. Sistemas | Especialista Web</title>
+  <meta name="description" content="Portafolio profesional de Ismael Jose Batista, Estudiante de Ingeniería en Sistemas y Especialista Web en Santo Domingo. Desarrollo Frontend, Backend y Soluciones Digitales Escalables.">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- HEADER / NAVBAR -->
+  <header class="header" id="header">
+    <div class="container nav-container">
+      <a href="#inicio" class="logo">
+        Ismael Jose <span>Batista</span>
+      </a>
+
+      <nav>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#sobre-mi" class="nav-link">Sobre mí</a></li>
+          <li><a href="#habilidades" class="nav-link">Habilidades</a></li>
+          <li><a href="#tecnologias" class="nav-link">Tecnologías</a></li>
+          <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
+          <li><a href="#experiencia" class="nav-link">Experiencia</a></li>
+          <li><a href="#contacto" class="nav-link">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <button class="btn-cv" id="open-cv-btn">
+          <i data-lucide="file-text"></i> Ver CV
+        </button>
+        <div class="nav-toggle" id="nav-toggle">
+          <i data-lucide="menu"></i>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO / INICIO -->
+  <section class="hero" id="inicio">
+    <div class="container">
+      
+      <!-- Profile Avatar with Orbiting Tech Badges (Screenshot 1) -->
+      <div class="hero-avatar-wrapper">
+        <div class="hero-avatar-ring"></div>
+        <img src="assets\images\fotoPortafolio.png" alt="Foto de Ismael Jose Batista" class="hero-avatar-img">
+        
+        <!-- Orbiting Tech Pills -->
+        <div class="orbit-badge js">JS</div>
+        <div class="orbit-badge react">React</div>
+        <div class="orbit-badge node">Node</div>
+      </div>
+
+      <div class="hero-tag">
+        <i data-lucide="code-2"></i> Hola, mi nombre es
+      </div>
+
+      <h1 class="hero-title">Ismael Jose Batista</h1>
+
+      <h2 class="hero-subtitle">
+        Estudiante de Ing. Sistemas | <span class="highlight">Especialista Web</span>
+      </h2>
+
+      <p class="hero-desc">
+        Desarrollo soluciones digitales modernas, escalables y orientadas a la mejor experiencia de usuario. 
+        Apasionado por transformar ideas complejas en interfaces intuitivas.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#proyectos" class="btn-primary">
+          Ver mis proyectos <i data-lucide="arrow-right"></i>
+        </a>
+        <a href="#contacto" class="btn-secondary">
+          Contactarme
+        </a>
+      </div>
+
+      <div class="hero-socials">
+        <!-- GITHUB HERO (Generado dinámicamente desde JS) -->
+        <a href="#" target="_blank" class="social-icon" title="GitHub" aria-label="GitHub" data-config-link="github">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+        </a>
+        <!-- LINKEDIN HERO (Generado dinámicamente desde JS) -->
+        <a href="#" target="_blank" class="social-icon" title="LinkedIn" aria-label="LinkedIn" data-config-link="linkedin">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+        </a>
+        <!-- WHATSAPP HERO (Generado dinámicamente desde JS) -->
+        <a href="#" target="_blank" class="social-icon" title="WhatsApp" aria-label="WhatsApp" data-config-link="whatsapp">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.498 14.382c-.301-.15-1.781-.878-2.056-.977-.275-.1-.475-.15-.675.15-.2.3-.775.976-.95 1.175-.175.2-.35.225-.65.075-.3-.15-1.265-.465-2.41-1.485-.89-.792-1.492-1.77-1.667-2.07-.175-.3-.018-.462.13-.61.135-.133.3-.35.45-.525.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525-.075-.15-.675-1.625-.925-2.225-.244-.583-.491-.504-.675-.513l-.575-.01c-.2 0-.525.075-.8.375-.275.3-1.05 1.025-1.05 2.5s1.075 2.9 1.225 3.1c.15.2 2.113 3.226 5.118 4.524.714.309 1.272.494 1.706.632.718.228 1.37.196 1.887.118.577-.087 1.781-.727 2.031-1.427.25-.7.25-1.298.175-1.427-.075-.13-.275-.205-.575-.355z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.66 1.437 5.168L2 22l4.986-1.39A9.957 9.957 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.642 0-3.171-.444-4.492-1.218l-.322-.189-2.964.827.842-2.893-.207-.334A7.954 7.954 0 0 1 4 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
+        </a>
+        <!-- EMAIL HERO (Generado dinámicamente desde JS) -->
+        <a href="#" class="social-icon" title="Email" aria-label="Email" data-config-link="email">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SOBRE MÍ (Screenshot 3) -->
+  <section class="section" id="sobre-mi">
+    <div class="container">
+      <h2 class="section-title">Sobre mí</h2>
+
+      <div class="about-grid">
+        <!-- Bio Narrative -->
+        <div class="about-text">
+          <p>
+            Hola, soy Ismael. Actualmente soy estudiante de <span class="purple-highlight">Ingeniería en Sistemas</span> y me desempeño como <span class="purple-highlight">Especialista Web</span>. Mi enfoque principal está en construir aplicaciones web robustas, eficientes y visualmente atractivas.
+          </p>
+          <p>
+            Me apasiona el desarrollo Full Stack, con un interés especial en la arquitectura moderna de aplicaciones y la integración de tecnologías en la nube. Disfruto enfrentarme a problemas complejos y encontrar soluciones elegantes mediante código limpio y buenas prácticas.
+          </p>
+          <p>
+            Actualmente, sigo expandiendo mis conocimientos en el ecosistema de React, la gestión de bases de datos y el diseño de APIs escalables para entregar productos web de alto impacto profesional.
+          </p>
+        </div>
+
+        <!-- Quick Facts Card (Screenshot 3) -->
+        <div class="quick-facts-card">
+          <div class="quick-facts-header">
+            <i data-lucide="map-pin"></i> Datos Rápidos
+          </div>
+          <ul class="quick-facts-list">
+            <li class="quick-fact-item">
+              <span class="quick-fact-label">Edad</span>
+              <span class="quick-fact-val">21 años</span>
+            </li>
+            <li class="quick-fact-item">
+              <span class="quick-fact-label">Formación</span>
+              <span class="quick-fact-val">Ingeniería en Sistemas</span>
+            </li>
+            <li class="quick-fact-item">
+              <span class="quick-fact-label">Rol</span>
+              <span class="quick-fact-val">Desarrollador Web</span>
+            </li>
+            <li class="quick-fact-item">
+              <span class="quick-fact-label">Ubicación</span>
+              <span class="quick-fact-val">Santo Domingo, Rep. Dom.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HABILIDADES (Screenshot 4) -->
+  <section class="section" id="habilidades">
+    <div class="container">
+      <h2 class="section-title">Habilidades</h2>
+
+      <div class="skills-grid">
+        
+        <!-- Left Card: Desarrollo -->
+        <div class="skills-card">
+          <h3 class="skills-card-title">
+            <i data-lucide="code"></i> Desarrollo
+          </h3>
+          
+          <div class="dev-skills-list">
+            <div class="dev-skill-item">
+              <div class="dev-skill-icon">
+                <i data-lucide="layout"></i>
+              </div>
+              <span class="dev-skill-name">Desarrollo Frontend</span>
+            </div>
+
+            <div class="dev-skill-item">
+              <div class="dev-skill-icon">
+                <i data-lucide="server"></i>
+              </div>
+              <span class="dev-skill-name">Desarrollo Backend</span>
+            </div>
+
+            <div class="dev-skill-item">
+              <div class="dev-skill-icon">
+                <i data-lucide="smartphone"></i>
+              </div>
+              <span class="dev-skill-name">Diseño Responsive</span>
+            </div>
+
+            <div class="dev-skill-item">
+              <div class="dev-skill-icon">
+                <i data-lucide="cpu"></i>
+              </div>
+              <span class="dev-skill-name">Integración de APIs</span>
+            </div>
+
+            <div class="dev-skill-item">
+              <div class="dev-skill-icon">
+                <i data-lucide="database"></i>
+              </div>
+              <span class="dev-skill-name">Bases de Datos</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Card: Profesionales -->
+        <div class="skills-card">
+          <h3 class="skills-card-title">
+            <i data-lucide="briefcase"></i> Profesionales
+          </h3>
+
+          <div class="prof-skills-grid">
+            <div class="prof-pill">
+              <div class="prof-pill-dot"></div>
+              <span>Resolución de problemas</span>
+            </div>
+
+            <div class="prof-pill">
+              <div class="prof-pill-dot"></div>
+              <span>Trabajo en equipo</span>
+            </div>
+
+            <div class="prof-pill">
+              <div class="prof-pill-dot"></div>
+              <span>Aprendizaje rápido</span>
+            </div>
+
+            <div class="prof-pill">
+              <div class="prof-pill-dot"></div>
+              <span>Organización</span>
+            </div>
+
+            <div class="prof-pill">
+              <div class="prof-pill-dot"></div>
+              <span>Comunicación efectiva</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TECNOLOGÍAS (Screenshot 5) -->
+  <section class="section" id="tecnologias">
+    <div class="container">
+      <h2 class="section-title">Tecnologías</h2>
+
+      <div class="tech-grid">
+        
+        <!-- Card 1: Frontend -->
+        <div class="tech-card">
+          <div class="tech-card-icon">
+            <i data-lucide="monitor"></i>
+          </div>
+          <h3 class="tech-card-title">Frontend</h3>
+          <div class="tech-badges-wrap">
+            <span class="tech-pill">HTML5</span>
+            <span class="tech-pill">CSS3</span>
+            <span class="tech-pill">JavaScript</span>
+            <span class="tech-pill">React</span>
+            <span class="tech-pill">Next.js</span>
+            <span class="tech-pill">Tailwind CSS</span>
+          </div>
+        </div>
+
+        <!-- Card 2: Backend / DB -->
+        <div class="tech-card">
+          <div class="tech-card-icon">
+            <i data-lucide="hard-drive"></i>
+          </div>
+          <h3 class="tech-card-title">Backend / DB</h3>
+          <div class="tech-badges-wrap">
+            <span class="tech-pill">Node.js</span>
+            <span class="tech-pill">Supabase</span>
+            <span class="tech-pill">PostgreSQL</span>
+            <span class="tech-pill">Express</span>
+          </div>
+        </div>
+
+        <!-- Card 3: Herramientas -->
+        <div class="tech-card">
+          <div class="tech-card-icon">
+            <i data-lucide="wrench"></i>
+          </div>
+          <h3 class="tech-card-title">Herramientas</h3>
+          <div class="tech-badges-wrap">
+            <span class="tech-pill">Git</span>
+            <span class="tech-pill">GitHub</span>
+            <span class="tech-pill">Vercel</span>
+            <span class="tech-pill">VS Code</span>
+            <span class="tech-pill">Figma</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROYECTOS -->
+  <section class="section" id="proyectos">
+    <div class="container">
+      <h2 class="section-title">Proyectos</h2>
+
+      <!-- Projects Grid -->
+      <div class="projects-grid">
+        
+        <!-- Project 1: RealEstate -->
+        <div class="project-card">
+          <div class="project-img-wrapper">
+            <img src="assets/images/realestate.jpg" alt="RealEstate Platform" class="project-img">
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">RealEstate Platform</h3>
+            <p class="project-desc">
+              Plataforma inmobiliaria integral para gestión de propiedades en alquiler y venta con mapa interactivo y filtros avanzados.
+            </p>
+            <div class="project-problem">
+              <strong>Solución:</strong> Desarrollé una arquitectura rápida con Supabase y React que redujo el tiempo de búsqueda de inmuebles a segundos.
+            </div>
+            <div class="project-tags">
+              <span class="project-tag">React</span>
+              <span class="project-tag">Expo</span>
+              <span class="project-tag">Supabase</span>
+              <span class="project-tag">PostgreSQL</span>
+            </div>
+            <div class="project-footer-btns">
+              <button class="btn-project-demo" onclick="openProjectModal('RealEstate Platform', 'Plataforma inmobiliaria construida con React, Supabase y PostgreSQL. Incluye filtros dinámicos, gestión de favoritos y autenticación de usuarios.', 'assets/images/realestate.jpg')">
+                <i data-lucide="external-link"></i> Ver proyecto
+              </button>
+              <a href="#" target="_blank" class="btn-project-code" title="Código fuente" data-config-link="github">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg> Código
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: Monitor System -->
+        <div class="project-card">
+          <div class="project-img-wrapper">
+            <img src="assets/images/monitor.jpg" alt="Monitor Infrastructure System" class="project-img">
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Monitor Infrastructure System</h3>
+            <p class="project-desc">
+              Dashboard analítico en tiempo real para monitoreo de métricas de red, servidores y rendimiento de aplicaciones.
+            </p>
+            <div class="project-problem">
+              <strong>Solución:</strong> Visualización centralizada de logs y latencia con alertas automáticas ante fallos de servidor.
+            </div>
+            <div class="project-tags">
+              <span class="project-tag">Node.js</span>
+              <span class="project-tag">JavaScript</span>
+              <span class="project-tag">Chart.js</span>
+              <span class="project-tag">Express</span>
+            </div>
+            <div class="project-footer-btns">
+              <button class="btn-project-demo" onclick="openProjectModal('Monitor Infrastructure System', 'Dashboard en tiempo real con transmisión de datos vía WebSockets, métricas de carga de CPU/RAM y panel gráfico interactivo.', 'assets/images/monitor.jpg')">
+                <i data-lucide="external-link"></i> Ver proyecto
+              </button>
+              <a href="#" target="_blank" class="btn-project-code" title="Código fuente" data-config-link="github">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg> Código
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: UNPHU Web Modules -->
+        <div class="project-card">
+          <div class="project-img-wrapper">
+            <img src="assets/images/realestate.jpg" alt="UNPHU Web Modules" class="project-img">
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Módulos Web Institucionales UNPHU</h3>
+            <p class="project-desc">
+              Interfaces y portales de servicios universitarios diseñados para máxima velocidad, accesibilidad y rendimiento SEO.
+            </p>
+            <div class="project-problem">
+              <strong>Solución:</strong> Reestructuración de la arquitectura UI para optimizar la velocidad de carga en un 40%.
+            </div>
+            <div class="project-tags">
+              <span class="project-tag">HTML5</span>
+              <span class="project-tag">CSS3</span>
+              <span class="project-tag">JavaScript</span>
+              <span class="project-tag">SEO</span>
+            </div>
+            <div class="project-footer-btns">
+              <button class="btn-project-demo" onclick="openProjectModal('Módulos Web Institucionales UNPHU', 'Desarrollo de portales responsivos orientados a la comunidad académica universitaria con estándares WCAG y SEO de alto rendimiento.', 'assets/images/realestate.jpg')">
+                <i data-lucide="external-link"></i> Ver proyecto
+              </button>
+              <a href="#" target="_blank" class="btn-project-code" title="Código fuente" data-config-link="github">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg> Código
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCIA -->
+  <section class="section" id="experiencia">
+    <div class="container">
+      <h2 class="section-title">Experiencia</h2>
+
+      <div class="experience-timeline">
+        
+        <!-- Experience Item 1 -->
+        <div class="exp-item">
+          <div class="exp-dot">
+            <i data-lucide="building-2"></i>
+          </div>
+          <div class="exp-card">
+            <h3 class="exp-role">Especialista Web</h3>
+            <div class="exp-company">
+              <i data-lucide="globe"></i> UNPHU
+            </div>
+            <span class="exp-date">2026 — Actualidad</span>
+            <ul class="exp-bullets">
+              <li>Mantenimiento y optimización continua de portales y aplicaciones web institucionales.</li>
+              <li>Implementación de interfaces modernas con HTML5, CSS3, JavaScript y mejores prácticas de SEO.</li>
+              <li>Colaboración estrecha con equipos multidisciplinarios para la integración de servicios digitales.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Experience Item 2 -->
+        <div class="exp-item">
+          <div class="exp-dot">
+            <i data-lucide="code-xml"></i>
+          </div>
+          <div class="exp-card">
+            <h3 class="exp-role">Desarrollador Web Freelance</h3>
+            <div class="exp-company">
+              <i data-lucide="user-check"></i> Proyectos Independientes
+            </div>
+            <span class="exp-date">2024 — Presente</span>
+            <ul class="exp-bullets">
+              <li>Diseño y desarrollo de sitios y plataformas a la medida (RealEstate, paneles de monitoreo).</li>
+              <li>Integración de bases de datos relacionales y autenticación con Supabase y PostgreSQL.</li>
+              <li>Creación de diseños 100% adaptables a cualquier dispositivo con alta velocidad de respuesta.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="section" id="contacto">
+    <div class="container">
+      <div class="contact-header">
+        <h2 class="section-title" style="margin-bottom: 0.5rem;">Contacto</h2>
+        <p class="contact-subtitle">¿Tienes un proyecto o una oportunidad en mente? Hablemos.</p>
+      </div>
+
+      <div class="contact-grid">
+        
+        <!-- Direct Contact Cards generados/vinculados dinámicamente desde PORTFOLIO_CONFIG -->
+        <div class="contact-info-cards">
+          <!-- EMAIL -->
+          <a href="#" class="contact-card" style="text-decoration: none;" data-config-link="email">
+            <div class="contact-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+            </div>
+            <div class="contact-details">
+              <h4>Email</h4>
+              <p data-config-text="email"></p>
+            </div>
+          </a>
+
+          <!-- WHATSAPP -->
+          <a href="#" target="_blank" class="contact-card" style="text-decoration: none;" data-config-link="whatsapp">
+            <div class="contact-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.498 14.382c-.301-.15-1.781-.878-2.056-.977-.275-.1-.475-.15-.675.15-.2.3-.775.976-.95 1.175-.175.2-.35.225-.65.075-.3-.15-1.265-.465-2.41-1.485-.89-.792-1.492-1.77-1.667-2.07-.175-.3-.018-.462.13-.61.135-.133.3-.35.45-.525.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525-.075-.15-.675-1.625-.925-2.225-.244-.583-.491-.504-.675-.513l-.575-.01c-.2 0-.525.075-.8.375-.275.3-1.05 1.025-1.05 2.5s1.075 2.9 1.225 3.1c.15.2 2.113 3.226 5.118 4.524.714.309 1.272.494 1.706.632.718.228 1.37.196 1.887.118.577-.087 1.781-.727 2.031-1.427.25-.7.25-1.298.175-1.427-.075-.13-.275-.205-.575-.355z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.66 1.437 5.168L2 22l4.986-1.39A9.957 9.957 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.642 0-3.171-.444-4.492-1.218l-.322-.189-2.964.827.842-2.893-.207-.334A7.954 7.954 0 0 1 4 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
+            </div>
+            <div class="contact-details">
+              <h4>WhatsApp</h4>
+              <p data-config-text="whatsapp"></p>
+            </div>
+          </a>
+
+          <!-- LINKEDIN -->
+          <a href="#" target="_blank" class="contact-card" style="text-decoration: none;" data-config-link="linkedin">
+            <div class="contact-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </div>
+            <div class="contact-details">
+              <h4>LinkedIn</h4>
+              <p data-config-text="linkedin"></p>
+            </div>
+          </a>
+
+          <!-- GITHUB -->
+          <a href="#" target="_blank" class="contact-card" style="text-decoration: none;" data-config-link="github">
+            <div class="contact-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+            </div>
+            <div class="contact-details">
+              <h4>GitHub</h4>
+              <p data-config-text="github"></p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-card">
+          <form class="contact-form" id="contact-form">
+            <div class="form-group">
+              <label for="name">Nombre</label>
+              <input type="text" id="name" class="form-input" placeholder="Tu nombre completo" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" class="form-input" placeholder="tu@correo.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Asunto</label>
+              <input type="text" id="subject" class="form-input" placeholder="Oportunidad / Consulta de proyecto" required>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Mensaje</label>
+              <textarea id="message" class="form-textarea" placeholder="Cuéntame sobre tu proyecto..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary" style="justify-content: center; width: 100%;">
+              Enviar mensaje <i data-lucide="send"></i>
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="logo">
+        Ismael Jose <span>Batista</span>
+      </div>
+      
+      <div class="footer-socials">
+        <a href="#" target="_blank" class="social-icon" title="GitHub" data-config-link="github">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+        </a>
+        <a href="#" target="_blank" class="social-icon" title="LinkedIn" data-config-link="linkedin">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+        </a>
+        <a href="#" target="_blank" class="social-icon" title="WhatsApp" data-config-link="whatsapp">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.498 14.382c-.301-.15-1.781-.878-2.056-.977-.275-.1-.475-.15-.675.15-.2.3-.775.976-.95 1.175-.175.2-.35.225-.65.075-.3-.15-1.265-.465-2.41-1.485-.89-.792-1.492-1.77-1.667-2.07-.175-.3-.018-.462.13-.61.135-.133.3-.35.45-.525.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525-.075-.15-.675-1.625-.925-2.225-.244-.583-.491-.504-.675-.513l-.575-.01c-.2 0-.525.075-.8.375-.275.3-1.05 1.025-1.05 2.5s1.075 2.9 1.225 3.1c.15.2 2.113 3.226 5.118 4.524.714.309 1.272.494 1.706.632.718.228 1.37.196 1.887.118.577-.087 1.781-.727 2.031-1.427.25-.7.25-1.298.175-1.427-.075-.13-.275-.205-.575-.355z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.66 1.437 5.168L2 22l4.986-1.39A9.957 9.957 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.642 0-3.171-.444-4.492-1.218l-.322-.189-2.964.827.842-2.893-.207-.334A7.954 7.954 0 0 1 4 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
+        </a>
+        <a href="#" class="social-icon" title="Email" data-config-link="email">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+        </a>
+      </div>
+
+      <p class="footer-text">
+        © 2026 Ismael Jose Batista. Todos los derechos reservados.
+      </p>
+    </div>
+  </footer>
+
+  <!-- CV MODAL CON VISTA PREVIA DE IMAGEN (CLIC PARA ABRIR PDF EN OTRA PESTAÑA) Y DESCARGA DIRECTA -->
+  <div class="modal-overlay" id="cv-modal">
+    <div class="modal-container" style="max-width: 650px;">
+      <button class="modal-close" id="close-cv-btn"><i data-lucide="x"></i></button>
+      
+      <div style="text-align: center; margin-bottom: 1.2rem;">
+        <h3 style="font-size: 1.6rem; margin-bottom: 0.3rem;">Curriculum Vitae</h3>
+        <p style="color: var(--text-muted);">Ismael Jose Batista — Especialista Web</p>
+      </div>
+
+      <!-- Vista previa de imagen del CV (Clic para abrir PDF completo en pestaña nueva) -->
+      <div style="width: 100%; margin-bottom: 1.5rem; text-align: center;">
+        <a href="#" target="_blank" id="cv-pdf-link" title="Clic para ver el PDF completo en una nueva pestaña" style="display: inline-block; width: 100%; border-radius: 14px; overflow: hidden; border: 1px solid var(--border-card); transition: transform 0.3s ease, box-shadow 0.3s ease;" class="cv-img-preview-link">
+          <img src="assets/images/CV-Ismael-Jose-Batista_page-0001.jpg" alt="Vista previa CV - Ismael Jose Batista" style="width: 100%; max-height: 520px; object-fit: contain; display: block; border-radius: 12px; margin: 0 auto;">
+        </a>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.7rem; display: flex; align-items: center; justify-content: center; gap: 0.4rem;">
+          <i data-lucide="external-link" style="width: 15px; height: 15px;"></i> Haz clic en la imagen para abrir el PDF en una nueva pestaña
+        </p>
+      </div>
+
+      <div style="display: flex; gap: 1rem; justify-content: center;">
+        <a href="#" download="CV-Ismael-Jose-Batista.pdf" class="btn-primary" style="justify-content: center;" id="cv-download-link">
+          <i data-lucide="download"></i> Descargar CV (PDF)
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECT PREVIEW MODAL -->
+  <div class="modal-overlay" id="project-modal">
+    <div class="modal-container">
+      <button class="modal-close" id="close-project-btn"><i data-lucide="x"></i></button>
+      
+      <div id="modal-project-content">
+        <h3 id="modal-project-title" style="font-size: 1.6rem; margin-bottom: 1rem;"></h3>
+        <img id="modal-project-img" src="" alt="" style="width: 100%; height: 240px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem; border: 1px solid var(--border-card);">
+        <p id="modal-project-desc" style="color: var(--text-muted); font-size: 1rem; line-height: 1.7; margin-bottom: 1.5rem;"></p>
+        <div style="display: flex; justify-content: flex-end;">
+          <button class="btn-secondary" onclick="closeProjectModal()">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast" id="toast">
+    ¡Mensaje enviado con éxito! Te responderé muy pronto.
+  </div>
+
+  <!-- JavaScript Script -->
+  <script src="script.js"></script>
+
+</body>
+</html>
