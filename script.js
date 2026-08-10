@@ -163,10 +163,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const data = await response.json();
 
         if (data.success) {
-          showToast('¡Gracias! Tu mensaje ha sido enviado directamente a tu correo.');
+          showToast('¡Gracias! Tu mensaje ha sido enviado correctamente.');
           contactForm.reset();
         } else {
-          showToast('⚠️ Ocurrió un error. Revisa tu clave de Web3Forms.');
+          showToast('⚠️ Ocurrió un error.');
         }
       } catch (err) {
         showToast('⚠️ Error de conexión al enviar el mensaje.');

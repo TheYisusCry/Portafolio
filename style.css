@@ -1208,12 +1208,13 @@ button {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  background: rgba(16, 185, 129, 0.9);
-  color: #fff;
+  background: linear-gradient(135deg, #a855f7, #9333ea);
+  border: 1px solid rgba(216, 180, 254, 0.4);
+  color: #ffffff;
   padding: 1rem 1.8rem;
-  border-radius: 12px;
+  border-radius: 14px;
   font-weight: 600;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  box-shadow: 0 10px 30px rgba(168, 85, 247, 0.45), 0 8px 25px rgba(0, 0, 0, 0.5);
   z-index: 3000;
   transform: translateY(100px);
   opacity: 0;
