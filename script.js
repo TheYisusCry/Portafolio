@@ -2,7 +2,7 @@
    CONFIGURACIÓN DEL PORTAFOLIO DE ISMAEL JOSÉ BATISTA
    --------------------------------------------------------------------------
    Edita los valores en este objeto para actualizar automáticamente tus enlaces
-   de contacto, redes sociales, teléfono/WhatsApp y rutas en todo el sitio web.
+   de contacto, redes sociales, teléfono/WhatsApp, la clave de Web3Forms y el CV.
    ========================================================================== */
 const PORTFOLIO_CONFIG = {
   // Información de Contacto & Redes Sociales
@@ -24,6 +24,9 @@ const PORTFOLIO_CONFIG = {
       link: "https://github.com/TheYisusCry"
     }
   },
+
+  // Clave de acceso de Web3Forms (Consigue la tuya GRATIS en https://web3forms.com en 1 minuto)
+  web3formsAccessKey: "d0650249-afed-4eaa-97b2-c1775121b5ce",
 
   // Ruta del archivo PDF para la vista previa y descarga del CV
   cvFilePath: "assets/archivos/CV-Ismael-Jose-Batista.pdf"
@@ -130,27 +133,67 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ------------------------------------------------------------------------
-     6. FORMULARIO DE CONTACTO & NOTIFICACIÓN TOAST
+     6. FORMULARIO DE CONTACTO (INTEGRADO CON WEB3FORMS & TOAST)
      ------------------------------------------------------------------------ */
   const contactForm = document.getElementById('contact-form');
-  const toast = document.getElementById('toast');
+  const submitBtn = document.getElementById('submit-btn');
 
   if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      if (toast) {
-        toast.innerText = '¡Gracias! Tu mensaje ha sido enviado correctamente.';
-        toast.classList.add('show');
-        setTimeout(() => {
-          toast.classList.remove('show');
-        }, 4000);
+      const accessKey = PORTFOLIO_CONFIG.web3formsAccessKey;
+
+      if (!accessKey || accessKey.includes("PON_TU")) {
+        showToast('⚠️ Agrega tu Web3Forms Access Key en PORTFOLIO_CONFIG (script.js)');
+        return;
       }
 
-      contactForm.reset();
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = 'Enviando...';
+      }
+
+      try {
+        const formData = new FormData(contactForm);
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: formData
+        });
+        const data = await response.json();
+
+        if (data.success) {
+          showToast('¡Gracias! Tu mensaje ha sido enviado directamente a tu correo.');
+          contactForm.reset();
+        } else {
+          showToast('⚠️ Ocurrió un error. Revisa tu clave de Web3Forms.');
+        }
+      } catch (err) {
+        showToast('⚠️ Error de conexión al enviar el mensaje.');
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = 'Enviar mensaje <i data-lucide="send"></i>';
+          if (window.lucide) lucide.createIcons();
+        }
+      }
     });
   }
 });
+
+/* ------------------------------------------------------------------------
+   MOSTRAR NOTIFICACIÓN TOAST
+   ------------------------------------------------------------------------ */
+function showToast(message) {
+  const toast = document.getElementById('toast');
+  if (toast) {
+    toast.innerText = message;
+    toast.classList.add('show');
+    setTimeout(() => {
+      toast.classList.remove('show');
+    }, 4500);
+  }
+}
 
 /* ------------------------------------------------------------------------
    FUNCIÓN DE CONFIGURACIÓN DINÁMICA
@@ -175,6 +218,12 @@ function applyPortfolioConfig() {
       el.textContent = cfg.contact[key].text;
     }
   });
+
+  // Actualizar la clave de Web3Forms en el input oculto
+  const web3KeyInput = document.getElementById('web3forms-key-input');
+  if (web3KeyInput && cfg.web3formsAccessKey) {
+    web3KeyInput.value = cfg.web3formsAccessKey;
+  }
 
   // Actualizar enlaces del CV (PDF al hacer clic en la imagen y botón de descarga)
   const cvPdfLink = document.getElementById('cv-pdf-link');
