@@ -368,9 +368,3 @@ function openProjectModalById(projectId) {
 
   openProjectModal(title, descriptionHtml, imgSrc, projectUrl);
 }
-
-// Helpers de accesos directos
-function openSagaModal() { openProjectModalById('saga'); }
-function openDupoModal() { openProjectModalById('dupo'); }
-function openMonitorModal() { openProjectModalById('monitor'); }
-
