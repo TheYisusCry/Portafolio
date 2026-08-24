@@ -370,28 +370,29 @@
       <div class="projects-carousel-wrapper">
         <div class="projects-track" id="projects-track">
           
-          <!-- Project 1: Saga -->
+          <!-- Project 1: SAGA -->
           <div class="project-card">
-            <div class="project-img-wrapper">
-              <img src="assets/images/realestate.jpg" alt="Saga Game Store" class="project-img">
+            <div class="project-img-wrapper" style="background: rgba(13, 8, 30, 0.8); display: flex; align-items: center; justify-content: center; padding: 1rem;">
+              <img src="assets/images/ProyectosRecursos/saga-logo.png" alt="SAGA — E-Commerce de Videojuegos" class="project-img" style="object-fit: contain; max-height: 180px;">
             </div>
             <div class="project-body">
-              <h3 class="project-title">Saga</h3>
+              <h3 class="project-title">SAGA</h3>
               <p class="project-desc">
-                Plataforma e-commerce especializada en la venta y distribución de videojuegos digitales y licencias.
+                Tienda web Full Stack de videojuegos con catálogo dinámico, autenticación de usuarios, carrito de compras, pagos con Stripe y panel de administración.
               </p>
               <div class="project-tags">
-                <span class="project-tag">React</span>
-                <span class="project-tag">Node.js</span>
+                <span class="project-tag">Django</span>
+                <span class="project-tag">Python</span>
                 <span class="project-tag">JavaScript</span>
-                <span class="project-tag">E-Commerce</span>
+                <span class="project-tag">SQLite</span>
+                <span class="project-tag">Stripe</span>
               </div>
               <div class="project-footer-btns">
-                <button class="btn-project-details" onclick="openProjectModal('Saga', 'Plataforma e-commerce para venta de videojuegos con catálogo interactivo, filtros por género, carrito de compras, pasarela de pago y entrega automatizada de licencias digitales.', 'assets/images/realestate.jpg')">
+                <button class="btn-project-details" onclick="openSagaModal()">
                   <i data-lucide="info"></i> Detalles
                 </button>
-                <a href="https://github.com/TheYisusCry" target="_blank" class="btn-project-demo" data-config-link="github">
-                  Ver Proyecto
+                <a href="https://yisuscry.pythonanywhere.com/" target="_blank" class="btn-project-demo">
+                  Ver proyecto
                 </a>
               </div>
             </div>
@@ -658,15 +659,20 @@
 
   <!-- PROJECT PREVIEW MODAL -->
   <div class="modal-overlay" id="project-modal">
-    <div class="modal-container">
+    <div class="modal-container" style="max-width: 720px;">
       <button class="modal-close" id="close-project-btn"><i data-lucide="x"></i></button>
       
       <div id="modal-project-content">
-        <h3 id="modal-project-title" style="font-size: 1.6rem; margin-bottom: 1rem;"></h3>
-        <img id="modal-project-img" src="" alt="" style="width: 100%; height: 240px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem; border: 1px solid var(--border-card);">
-        <p id="modal-project-desc" style="color: var(--text-muted); font-size: 1rem; line-height: 1.7; margin-bottom: 1.5rem;"></p>
-        <div style="display: flex; justify-content: flex-end;">
-          <button class="btn-secondary" onclick="closeProjectModal()">Cerrar</button>
+        <h3 id="modal-project-title" style="font-size: 1.7rem; margin-bottom: 1.2rem; color: #ffffff;"></h3>
+        <div style="width: 100%; text-align: center; margin-bottom: 1.5rem; background: rgba(13, 8, 30, 0.7); border: 1px solid var(--border-card); border-radius: 16px; padding: 1.2rem; display: flex; align-items: center; justify-content: center;">
+          <img id="modal-project-img" src="" alt="" style="max-width: 100%; max-height: 250px; object-fit: contain; border-radius: 10px; display: block;">
+        </div>
+        <div id="modal-project-desc" style="color: var(--text-muted); font-size: 1rem; line-height: 1.7; margin-bottom: 1.8rem;"></div>
+        <div style="display: flex; justify-content: flex-end; gap: 1rem; flex-wrap: wrap;">
+          <a href="#" target="_blank" class="btn-primary" id="modal-project-link" style="text-decoration: none; display: none; padding: 0.7rem 1.6rem;">
+            Ver proyecto <i data-lucide="external-link"></i>
+          </a>
+          <button class="btn-secondary" onclick="closeProjectModal()" style="padding: 0.7rem 1.6rem;">Cerrar</button>
         </div>
       </div>
     </div>
