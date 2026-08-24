@@ -375,7 +375,7 @@
             <div class="project-img-wrapper" style="background: rgba(13, 8, 30, 0.8); display: flex; align-items: center; justify-content: center; padding: 1rem;">
               <img src="assets/images/ProyectosRecursos/saga-logo.png" alt="SAGA — E-Commerce de Videojuegos" class="project-img" style="object-fit: contain; max-height: 180px;">
             </div>
-            <div class="project-body">
+            <div class="project-body">  
               <h3 class="project-title">SAGA</h3>
               <p class="project-desc">
                 Tienda web Full Stack de videojuegos con catálogo dinámico, autenticación de usuarios, carrito de compras, pagos con Stripe y panel de administración.
@@ -415,7 +415,7 @@
                 <span class="project-tag">PostgreSQL</span>
               </div>
               <div class="project-footer-btns">
-                <button class="btn-project-details" onclick="openProjectModal('Dupo', 'Plataforma inmobiliaria construida con React, Supabase y PostgreSQL. Incluye mapa interactivo, filtros dinámicos, gestión de favoritos, autenticación de usuarios y backend relacional altamente optimizado.', 'assets/images/realestate.jpg')">
+                <button class="btn-project-details" onclick="openProjectModalById('dupo')">
                   <i data-lucide="info"></i> Detalles
                 </button>
                 <a href="https://github.com/TheYisusCry" target="_blank" class="btn-project-demo" data-config-link="github">
@@ -442,7 +442,7 @@
                 <span class="project-tag">Express</span>
               </div>
               <div class="project-footer-btns">
-                <button class="btn-project-details" onclick="openProjectModal('Monitor Infrastructure System', 'Dashboard en tiempo real con transmisión de datos vía WebSockets, métricas de carga de CPU/RAM, logs centralizados y panel gráfico interactivo con alertas automáticas ante fallos de servidor.', 'assets/images/monitor.jpg')">
+                <button class="btn-project-details" onclick="openProjectModalById('monitor')">
                   <i data-lucide="info"></i> Detalles
                 </button>
                 <a href="https://github.com/TheYisusCry" target="_blank" class="btn-project-demo" data-config-link="github">
@@ -688,7 +688,8 @@
     ¡Mensaje enviado con éxito! Te responderé muy pronto.
   </div>
 
-  <!-- JavaScript Script -->
+  <!-- JavaScript Scripts -->
+  <script src="projectsData.js"></script>
   <script src="script.js"></script>
 
 </body>

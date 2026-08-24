@@ -305,14 +305,20 @@ function closeProjectModal() {
 }
 
 /* ------------------------------------------------------------------------
-   MODAL ESPECÍFICO PARA SAGA E-COMMERCE
+   RENDERIZADOR DINÁMICO DE MODALES (BASADO EN PROJECTS_DATA)
    ------------------------------------------------------------------------ */
-function openSagaModal() {
-  const title = "SAGA — Tienda Web de Videojuegos";
-  const imgSrc = "assets\\images\\ProyectosRecursos\\SAGALobby.png";
-  const projectUrl = "https://yisuscry.pythonanywhere.com/";
+function openProjectModalById(projectId) {
+  if (typeof PROJECTS_DATA === 'undefined' || !PROJECTS_DATA[projectId]) {
+    console.warn(`PROJECTS_DATA no contiene la clave '${projectId}'`);
+    return;
+  }
 
-  const descriptionHtml = `
+  const project = PROJECTS_DATA[projectId];
+  const title = project.title;
+  const imgSrc = project.imgSrc || project.cardImgSrc;
+  const projectUrl = project.projectUrl;
+
+  let descriptionHtml = `
     <div style="display: flex; flex-direction: column; gap: 1.4rem;">
       
       <!-- Descripción General -->
@@ -321,81 +327,50 @@ function openSagaModal() {
           <i data-lucide="sparkles" style="color: var(--primary-violet);"></i> Descripción General
         </h4>
         <p style="color: var(--text-muted); line-height: 1.65; font-size: 0.95rem;">
-          <strong>SAGA</strong> es una tienda web de videojuegos completamente funcional desarrollada como una plataforma de comercio electrónico integral. Combina una interfaz moderna en el frontend con una arquitectura backend robusta basada en <strong>Django y Python</strong>, gestionando usuarios, catálogo dinámico, pagos en línea en entorno de prueba con <strong>Stripe</strong>, facturación y reportes comerciales.
+          ${project.overview}
         </p>
       </div>
+  `;
 
-      <!-- Tecnologías Utilizadas -->
+  // Tecnologías
+  if (project.technologies && project.technologies.length > 0) {
+    descriptionHtml += `
       <div>
         <h4 style="color: #ffffff; font-size: 1.1rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
           <i data-lucide="code-2" style="color: var(--accent-blue);"></i> Tecnologías Utilizadas
         </h4>
         <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
-          <span class="project-tag" style="background: rgba(139, 92, 246, 0.15); border-color: rgba(139, 92, 246, 0.4); color: #fff;">HTML5 & CSS3</span>
-          <span class="project-tag" style="background: rgba(139, 92, 246, 0.15); border-color: rgba(139, 92, 246, 0.4); color: #fff;">JavaScript</span>
-          <span class="project-tag" style="background: rgba(59, 130, 246, 0.15); border-color: rgba(59, 130, 246, 0.4); color: #60a5fa;">Python</span>
-          <span class="project-tag" style="background: rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.4); color: #34d399;">Django</span>
-          <span class="project-tag" style="background: rgba(234, 179, 8, 0.15); border-color: rgba(234, 179, 8, 0.4); color: #facc15;">SQLite</span>
-          <span class="project-tag" style="background: rgba(168, 85, 247, 0.15); border-color: rgba(168, 85, 247, 0.4); color: #c084fc;">Stripe API (Test)</span>
+          ${project.technologies.map(t => `<span class="project-tag" style="background: ${t.bg}; border-color: ${t.border}; color: ${t.color};">${t.name}</span>`).join('')}
         </div>
       </div>
+    `;
+  }
 
-      <!-- Funcionalidades agrupadas -->
+  // Categorías de Funcionalidades
+  if (project.features && project.features.length > 0) {
+    descriptionHtml += `
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 0.3rem;">
-        
-        <!-- Funcionalidades Principales -->
-        <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-card); padding: 1rem 1.2rem; border-radius: 14px;">
-          <h5 style="color: var(--accent-blue); font-size: 0.98rem; margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.4rem;">
-            <i data-lucide="layout-grid"></i> Funcionalidades Principales
-          </h5>
-          <ul style="list-style: none; padding-left: 0; display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.88rem; color: #d1d5db;">
-            <li style="display: flex; align-items: center; gap: 0.4rem;"><i data-lucide="check" style="width: 14px; height: 14px; color: var(--accent-emerald);"></i> Buscador de videojuegos integrado</li>
-            <li style="display: flex; align-items: center; gap: 0.4rem;"><i data-lucide="check" style="width: 14px; height: 14px; color: var(--accent-emerald);"></i> Filtros para navegación por catálogo</li>
-            <li style="display: flex; align-items: center; gap: 0.4rem;"><i data-lucide="check" style="width: 14px; height: 14px; color: var(--accent-emerald);"></i> Diseño 100% responsive y adaptable</li>
-          </ul>
-        </div>
-
-        <!-- Sistema de Usuarios & Perfiles -->
-        <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-card); padding: 1rem 1.2rem; border-radius: 14px;">
-          <h5 style="color: var(--primary-violet); font-size: 0.98rem; margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.4rem;">
-            <i data-lucide="user-check"></i> Usuarios y Perfiles
-          </h5>
-          <ul style="list-style: none; padding-left: 0; display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.88rem; color: #d1d5db;">
-            <li style="display: flex; align-items: center; gap: 0.4rem;"><i data-lucide="check" style="width: 14px; height: 14px; color: var(--accent-emerald);"></i> Registro e inicio de sesión seguro</li>
-            <li style="display: flex; align-items: center; gap: 0.4rem;"><i data-lucide="check" style="width: 14px; height: 14px; color: var(--accent-emerald);"></i> Gestión de perfil y edición de datos</li>
-            <li style="display: flex; align-items: center; gap: 0.4rem;"><i data-lucide="check" style="width: 14px; height: 14px; color: var(--accent-emerald);"></i> Cambio de contraseña e historial</li>
-          </ul>
-        </div>
-
-        <!-- Comercio & Pagos -->
-        <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-card); padding: 1rem 1.2rem; border-radius: 14px;">
-          <h5 style="color: #facc15; font-size: 0.98rem; margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.4rem;">
-            <i data-lucide="shopping-cart"></i> Comercio y Pagos
-          </h5>
-          <ul style="list-style: none; padding-left: 0; display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.88rem; color: #d1d5db;">
-            <li style="display: flex; align-items: center; gap: 0.4rem;"><i data-lucide="check" style="width: 14px; height: 14px; color: var(--accent-emerald);"></i> Carrito de compras funcional</li>
-            <li style="display: flex; align-items: center; gap: 0.4rem;"><i data-lucide="check" style="width: 14px; height: 14px; color: var(--accent-emerald);"></i> Pasarela Stripe en modo prueba</li>
-            <li style="display: flex; align-items: center; gap: 0.4rem;"><i data-lucide="check" style="width: 14px; height: 14px; color: var(--accent-emerald);"></i> Generación automática de facturas</li>
-          </ul>
-        </div>
-
-        <!-- Administración & Reportes -->
-        <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-card); padding: 1rem 1.2rem; border-radius: 14px;">
-          <h5 style="color: var(--accent-emerald); font-size: 0.98rem; margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.4rem;">
-            <i data-lucide="bar-chart-3"></i> Administración y Reportes
-          </h5>
-          <ul style="list-style: none; padding-left: 0; display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.88rem; color: #d1d5db;">
-            <li style="display: flex; align-items: center; gap: 0.4rem;"><i data-lucide="check" style="width: 14px; height: 14px; color: var(--accent-emerald);"></i> Dashboard de gestión de contenido</li>
-            <li style="display: flex; align-items: center; gap: 0.4rem;"><i data-lucide="check" style="width: 14px; height: 14px; color: var(--accent-emerald);"></i> Reportes de ventas y por factura</li>
-            <li style="display: flex; align-items: center; gap: 0.4rem;"><i data-lucide="check" style="width: 14px; height: 14px; color: var(--accent-emerald);"></i> Gestión básica de clientes</li>
-          </ul>
-        </div>
-
+        ${project.features.map(f => `
+          <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-card); padding: 1rem 1.2rem; border-radius: 14px;">
+            <h5 style="color: ${f.color || 'var(--accent-blue)'}; font-size: 0.98rem; margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.4rem;">
+              <i data-lucide="${f.icon || 'check'}"></i> ${f.title}
+            </h5>
+            <ul style="list-style: none; padding-left: 0; display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.88rem; color: #d1d5db;">
+              ${f.items.map(item => `<li style="display: flex; align-items: center; gap: 0.4rem;"><i data-lucide="check" style="width: 14px; height: 14px; color: var(--accent-emerald);"></i> ${item}</li>`).join('')}
+            </ul>
+          </div>
+        `).join('')}
       </div>
+    `;
+  }
 
-    </div>
-  `;
+  descriptionHtml += `</div>`;
 
   openProjectModal(title, descriptionHtml, imgSrc, projectUrl);
 }
+
+// Helpers de accesos directos
+function openSagaModal() { openProjectModalById('saga'); }
+function openDupoModal() { openProjectModalById('dupo'); }
+function openMonitorModal() { openProjectModalById('monitor'); }
 
