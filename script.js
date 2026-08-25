@@ -495,4 +495,43 @@ function initServicesCarousel() {
 
 document.addEventListener('DOMContentLoaded', initServicesCarousel);
 
+/* ------------------------------------------------------------------------
+   MANEJO DE SOLICITUDES DE SERVICIOS VÍA WHATSAPP (SIN MOSTRAR PRECIO)
+   ------------------------------------------------------------------------ */
+const SERVICE_MESSAGES = {
+  "Menú Digital / Catálogo Online": "Hola Ismael, estoy interesado en el servicio de Menú Digital / Catálogo Online. Me gustaría conocer más detalles y saber cómo podemos trabajar mi proyecto.",
+  "Página Web Informativa": "Hola Ismael, estoy interesado en el servicio de Página Web Informativa. Me gustaría conocer más detalles y conversar sobre lo que necesito para mi proyecto.",
+  "Sitio Web Corporativo": "Hola Ismael, estoy interesado en el servicio de Sitio Web Corporativo. Me gustaría conocer más detalles y conversar sobre lo que necesito para mi empresa.",
+  "Tienda Online / E-Commerce": "Hola Ismael, estoy interesado en el servicio de Tienda Online / E-Commerce. Me gustaría conocer más detalles y conversar sobre las características que necesito para mi tienda.",
+  "Sistema Administrativo": "Hola Ismael, estoy interesado en el servicio de Sistema Administrativo. Me gustaría conocer más detalles y conversar sobre las necesidades de mi negocio.",
+  "Aplicación Web Full Stack": "Hola Ismael, estoy interesado en el servicio de Aplicación Web Full Stack. Me gustaría conversar sobre mi proyecto y conocer cómo podemos llevarlo a cabo.",
+  "Aplicación Móvil Android": "Hola Ismael, estoy interesado en el servicio de Aplicación Móvil Android. Me gustaría conversar sobre mi proyecto y conocer cómo podemos llevarlo a cabo."
+};
+
+function initServiceRequestButtons() {
+  const requestServiceBtns = document.querySelectorAll('.btn-request-service');
+  requestServiceBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const serviceName = btn.getAttribute('data-service') || 'Servicio';
+      const customMessage = btn.getAttribute('data-message');
+
+      let message = customMessage || SERVICE_MESSAGES[serviceName] || `Hola Ismael, estoy interesado en el servicio de ${serviceName}. Me gustaría conocer más detalles.`;
+
+      let rawWaLink = (typeof PORTFOLIO_CONFIG !== 'undefined' && PORTFOLIO_CONFIG.contact && PORTFOLIO_CONFIG.contact.whatsapp && PORTFOLIO_CONFIG.contact.whatsapp.link)
+        ? PORTFOLIO_CONFIG.contact.whatsapp.link
+        : 'https://wa.me/18494530903';
+
+      const waNumber = rawWaLink.replace(/[^0-9]/g, '') || '18494530903';
+
+      const targetUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(message)}`;
+      window.open(targetUrl, '_blank');
+    });
+  });
+}
+
+document.addEventListener('DOMContentLoaded', initServiceRequestButtons);
+
+
+
 
