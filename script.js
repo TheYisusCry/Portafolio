@@ -368,3 +368,131 @@ function openProjectModalById(projectId) {
 
   openProjectModal(title, descriptionHtml, imgSrc, projectUrl);
 }
+
+/* ------------------------------------------------------------------------
+   CARRUSEL DE SERVICIOS EN PANTALLAS MÓVILES Y TABLETS (<= 992px)
+   - Auto-scroll automático cada 6 segundos (6000ms)
+   - Indicadores de puntos (dots) activos
+   - Scroll manual / swipe permitido
+   - Al interactuar manualmente, se detiene el scroll automático durante 15 segundos (15000ms)
+   - Al pasar los 15s sin interacción, el scroll automático se reactiva automáticamente
+   ------------------------------------------------------------------------ */
+function initServicesCarousel() {
+  const servicesGrid = document.querySelector('.services-grid');
+  const indicatorsContainer = document.getElementById('services-indicators');
+  if (!servicesGrid) return;
+
+  const cards = servicesGrid.querySelectorAll('.service-card');
+  if (cards.length === 0) return;
+
+  let currentIndex = 0;
+  let autoScrollInterval = null;
+  let pauseTimeout = null;
+  let dots = [];
+
+  // Crear indicadores de puntos dinámicamente
+  if (indicatorsContainer) {
+    indicatorsContainer.innerHTML = '';
+    cards.forEach((_, idx) => {
+      const dot = document.createElement('div');
+      dot.className = `indicator-dot ${idx === 0 ? 'active' : ''}`;
+      dot.addEventListener('click', () => {
+        handleUserInteraction();
+        scrollToCard(idx);
+      });
+      indicatorsContainer.appendChild(dot);
+      dots.push(dot);
+    });
+  }
+
+  function updateActiveDot(index) {
+    currentIndex = index;
+    dots.forEach((dot, idx) => {
+      dot.classList.toggle('active', idx === index);
+    });
+  }
+
+  function scrollToCard(index) {
+    const cardWidth = servicesGrid.clientWidth;
+    servicesGrid.scrollTo({
+      left: index * cardWidth,
+      behavior: 'smooth'
+    });
+    updateActiveDot(index);
+  }
+
+  function nextSlide() {
+    if (window.innerWidth > 992) return;
+    const nextIndex = (currentIndex + 1) % cards.length;
+    scrollToCard(nextIndex);
+  }
+
+  function startAutoScroll() {
+    stopAutoScroll();
+    autoScrollInterval = setInterval(nextSlide, 6000);
+  }
+
+  function stopAutoScroll() {
+    if (autoScrollInterval) {
+      clearInterval(autoScrollInterval);
+      autoScrollInterval = null;
+    }
+  }
+
+  function handleUserInteraction() {
+    stopAutoScroll();
+    if (pauseTimeout) {
+      clearTimeout(pauseTimeout);
+    }
+    // Pausar el scroll automático durante 15 segundos (15000ms)
+    pauseTimeout = setTimeout(() => {
+      if (window.innerWidth <= 992) {
+        startAutoScroll();
+      }
+    }, 15000);
+  }
+
+  // Detectar scroll / swipe del usuario
+  let scrollDebounce = null;
+  servicesGrid.addEventListener('scroll', () => {
+    if (window.innerWidth > 992) return;
+
+    const cardWidth = servicesGrid.clientWidth;
+    if (cardWidth > 0) {
+      const activeIdx = Math.round(servicesGrid.scrollLeft / cardWidth);
+      if (activeIdx !== currentIndex && activeIdx >= 0 && activeIdx < cards.length) {
+        updateActiveDot(activeIdx);
+      }
+    }
+
+    if (scrollDebounce) clearTimeout(scrollDebounce);
+    scrollDebounce = setTimeout(() => {
+      handleUserInteraction();
+    }, 80);
+  }, { passive: true });
+
+  // Pausar ante interacción táctil o clic
+  servicesGrid.addEventListener('touchstart', handleUserInteraction, { passive: true });
+  servicesGrid.addEventListener('mousedown', handleUserInteraction, { passive: true });
+
+  function checkScreen() {
+    if (window.innerWidth <= 992) {
+      const cardWidth = servicesGrid.clientWidth;
+      if (cardWidth > 0) {
+        const activeIdx = Math.round(servicesGrid.scrollLeft / cardWidth);
+        updateActiveDot(activeIdx);
+      }
+      startAutoScroll();
+    } else {
+      stopAutoScroll();
+      if (pauseTimeout) clearTimeout(pauseTimeout);
+    }
+  }
+
+  window.addEventListener('resize', checkScreen);
+  checkScreen();
+}
+
+document.addEventListener('DOMContentLoaded', initServicesCarousel);
+
+

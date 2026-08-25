@@ -1344,19 +1344,24 @@ button {
 .services-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 1.8rem;
   align-items: stretch;
+}
+
+.services-container {
+  max-width: 1240px !important;
 }
 
 .service-card {
   background: var(--bg-card);
   border: 1px solid var(--border-card);
   border-radius: 20px;
-  padding: 2.2rem;
+  padding: 2rem 1.6rem;
   display: flex;
   flex-direction: column;
   position: relative;
   transition: var(--transition-normal);
+  word-break: break-word;
 }
 
 .service-card:hover {
@@ -1374,7 +1379,7 @@ button {
 .service-badge {
   position: absolute;
   top: -14px;
-  right: 24px;
+  right: 20px;
   background: linear-gradient(135deg, var(--primary-purple), var(--accent-blue));
   color: #ffffff;
   font-size: 0.75rem;
@@ -1387,8 +1392,8 @@ button {
 }
 
 .service-icon {
-  width: 54px;
-  height: 54px;
+  width: 52px;
+  height: 52px;
   border-radius: 14px;
   background: rgba(139, 92, 246, 0.15);
   border: 1px solid rgba(139, 92, 246, 0.3);
@@ -1396,38 +1401,53 @@ button {
   align-items: center;
   justify-content: center;
   color: var(--primary-violet);
-  font-size: 1.5rem;
-  margin-bottom: 1.2rem;
+  font-size: 1.45rem;
+  margin-bottom: 1.1rem;
 }
 
 .service-title {
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   font-weight: 700;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.5rem;
   color: #ffffff;
+  line-height: 1.3;
+}
+
+.service-price {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--primary-violet);
+  margin-bottom: 0.9rem;
+  background: rgba(139, 92, 246, 0.12);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  border-radius: 10px;
+  width: fit-content;
 }
 
 .service-desc {
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   color: var(--text-muted);
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
+  margin-bottom: 1.3rem;
+  line-height: 1.55;
 }
 
 .service-features {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 0.75rem;
   margin-bottom: 2rem;
 }
 
 .service-features li {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   color: #e5e7eb;
   display: flex;
-  align-items: center;
-  gap: 0.6rem;
+  align-items: flex-start;
+  gap: 0.55rem;
+  line-height: 1.4;
 }
 
 .service-features li svg {
@@ -1435,6 +1455,7 @@ button {
   width: 16px;
   height: 16px;
   flex-shrink: 0;
+  margin-top: 2px;
 }
 
 .service-card .btn-primary,
@@ -1475,9 +1496,116 @@ button {
   filter: drop-shadow(0 12px 35px rgba(168, 85, 247, 0.9));
 }
 
+/* ==========================================================================
+   INDICADORES DEL CARRUSEL DE SERVICIOS
+   ========================================================================== */
+.services-indicators {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.indicator-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid var(--border-card);
+  cursor: pointer;
+  transition: all 0.35s ease;
+}
+
+.indicator-dot.active {
+  width: 26px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--primary-purple), var(--accent-blue));
+  box-shadow: 0 0 14px rgba(139, 92, 246, 0.7);
+}
+
+/* ==========================================================================
+   RESPONSIVE: CARRUSEL DE SERVICIOS (<= 992px)
+   ========================================================================== */
 @media (max-width: 992px) {
+  .services-indicators {
+    display: flex;
+  }
+
   .services-grid {
-    grid-template-columns: 1fr;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    scroll-behavior: smooth !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    width: 100% !important;
+    padding: 0.5rem 0 1rem 0 !important;
+    margin: 0 auto !important;
+    gap: 0 !important;
+  }
+
+  .services-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .service-card {
+    min-width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    box-sizing: border-box;
+    scroll-snap-align: start !important;
+    scroll-snap-stop: always !important;
+    padding: 2.2rem 1.6rem !important;
+    border-radius: 20px !important;
+  }
+
+  .service-title {
+    font-size: 1.35rem !important;
+  }
+
+  .service-price {
+    font-size: 1.2rem !important;
+    padding: 0.35rem 0.9rem !important;
+  }
+
+  .service-desc {
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
+  }
+
+  .service-features li {
+    font-size: 0.95rem !important;
+    line-height: 1.5 !important;
+  }
+
+  .service-card .btn-primary,
+  .service-card .btn-secondary {
+    font-size: 1rem !important;
+    padding: 0.8rem 1.5rem !important;
+  }
+
+  .floating-services-btn {
+    bottom: 45px;
+    right: 18px;
+  }
+
+  .floating-services-img {
+    width: 115px;
+  }
+}
+
+@media (max-width: 540px) {
+  .floating-services-btn {
+    bottom: 35px;
+    right: 14px;
+  }
+
+  .floating-services-img {
+    width: 95px;
   }
 }
 
