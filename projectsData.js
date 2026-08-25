@@ -14,7 +14,7 @@ const PROJECTS_DATA = {
     projectUrl: "https://yisuscry.pythonanywhere.com/",
     cardDesc: "Tienda web Full Stack de videojuegos con catálogo dinámico, autenticación de usuarios, carrito de compras, pagos con Stripe y panel de administración.",
     cardTags: ["Django", "Python", "JavaScript", "SQLite", "Stripe"],
-    overview: "<strong>SAGA</strong> es una tienda web de videojuegos completamente funcional desarrollada como una plataforma de comercio electrónico integral. Combina una interfaz moderna en el frontend con una arquitectura backend robusta basada en <strong>Django y Python</strong>, gestionando usuarios, catálogo dinámico, pagos en línea en entorno de prueba con <strong>Stripe</strong>, facturación y reportes comerciales.",
+    overview: "SAGA es una tienda web de videojuegos completamente funcional desarrollada como una plataforma de comercio electrónico integral. Combina una interfaz moderna en el frontend con una arquitectura backend robusta basada en Django y Python, gestionando usuarios, catálogo dinámico, pagos en línea en entorno de prueba con Stripe, facturación y reportes comerciales.",
     technologies: [
       { name: "HTML5 & CSS3", color: "#ffffff", bg: "rgba(139, 92, 246, 0.15)", border: "rgba(139, 92, 246, 0.4)" },
       { name: "JavaScript", color: "#ffffff", bg: "rgba(139, 92, 246, 0.15)", border: "rgba(139, 92, 246, 0.4)" },
@@ -75,7 +75,7 @@ const PROJECTS_DATA = {
     projectUrl: "https://duarte-polanco-rouge-ten.vercel.app/",
     cardDesc: "Plataforma inmobiliaria Web & Móvil desarrollada para un cliente real. Gestión centralizada de propiedades, usuarios, citas y automatización con WhatsApp.",
     cardTags: ["React", "React Native", "Node.js", "Supabase", "Vercel"],
-    overview: "<strong>DUPO (Duarte Polanco Bienes Raíces)</strong> es una solución inmobiliaria integral contratada y desarrollada para un cliente real. Resuelve la necesidad empresarial de centralizar la gestión de propiedades (venta y alquiler), usuarios y agendamiento de citas. La plataforma cuenta con una <strong>aplicación web desplegada en Vercel</strong> y una <strong>aplicación móvil construida en React Native con Expo</strong>, compartiendo la misma infraestructura backend y base de datos relacional en <strong>Supabase (Node.js)</strong>.",
+    overview: "DUPO (Duarte Polanco Bienes Raíces) es una solución inmobiliaria integral contratada y desarrollada para un cliente real. Resuelve la necesidad empresarial de centralizar la gestión de propiedades (venta y alquiler), usuarios y agendamiento de citas. La plataforma cuenta con una aplicación web desplegada en Vercel y una aplicación móvil construida en React Native con Expo, compartiendo la misma infraestructura backend y base de datos relacional en Supabase (Node.js).",
     technologies: [
       { name: "React", color: "#60a5fa", bg: "rgba(59, 130, 246, 0.15)", border: "rgba(59, 130, 246, 0.4)" },
       { name: "React Native / Expo", color: "#ffffff", bg: "rgba(139, 92, 246, 0.15)", border: "rgba(139, 92, 246, 0.4)" },
@@ -135,7 +135,7 @@ const PROJECTS_DATA = {
     projectUrl: "https://github.com/TheYisusCry",
     cardDesc: "Aplicación móvil de finanzas personales que permite gestionar la situación financiera real y simular decisiones futuras mediante escenarios 'What If'.",
     cardTags: ["React Native", "Expo", "TypeScript", "SQLite", "NativeWind"],
-    overview: "<strong>Monitor</strong> es una aplicación móvil de finanzas personales desarrollada bajo un enfoque <strong>Offline-First</strong> con <strong>SQLite local</strong>. Diseñada para ayudar a controlar el dinero, registrar movimientos y analizar el flujo de caja, su gran diferenciador es el sistema de escenarios <strong>'What If'</strong>: permite simular y experimentar decisiones futuras (compras, viajes, gastos extraordinarios) sin alterar la situación financiera real hasta que el usuario decida aplicarla.",
+    overview: "Monitor es una aplicación móvil de finanzas personales desarrollada bajo un enfoque Offline-First con SQLite local. Diseñada para ayudar a controlar el dinero, registrar movimientos y analizar el flujo de caja, su gran diferenciador es el sistema de escenarios 'What If': permite simular y experimentar decisiones futuras (compras, viajes, gastos extraordinarios) sin alterar la situación financiera real hasta que el usuario decida aplicarla.",
     technologies: [
       { name: "React Native", color: "#60a5fa", bg: "rgba(59, 130, 246, 0.15)", border: "rgba(59, 130, 246, 0.4)" },
       { name: "Expo", color: "#ffffff", bg: "rgba(139, 92, 246, 0.15)", border: "rgba(139, 92, 246, 0.4)" },
