@@ -129,29 +129,57 @@ const PROJECTS_DATA = {
 
   monitor: {
     id: "monitor",
-    title: "Monitor — Sistema de Monitoreo de Infraestructura",
-    imgSrc: "assets/images/monitor.jpg",
-    cardImgSrc: "assets/images/monitor.jpg",
+    title: "Monitor — Finanzas Personales & Escenarios 'What If'",
+    imgSrc: "assets/images/ProyectosRecursos/monitorICon.png",
+    cardImgSrc: "assets/images/ProyectosRecursos/monitorICon.png",
     projectUrl: "https://github.com/TheYisusCry",
-    cardDesc: "Dashboard analítico en tiempo real para monitoreo de métricas de red, servidores y rendimiento de aplicaciones.",
-    cardTags: ["Node.js", "JavaScript", "Chart.js", "Express"],
-    overview: "<strong>Monitor App</strong> es un dashboard analítico centralizado en tiempo real diseñado para vigilar la salud de servidores y red. Permite la transmisión de datos vía WebSockets, graficar carga de CPU/RAM y activar alertas inmediatas ante eventos críticos.",
+    cardDesc: "Aplicación móvil de finanzas personales que permite gestionar la situación financiera real y simular decisiones futuras mediante escenarios 'What If'.",
+    cardTags: ["React Native", "Expo", "TypeScript", "SQLite", "NativeWind"],
+    overview: "<strong>Monitor</strong> es una aplicación móvil de finanzas personales desarrollada bajo un enfoque <strong>Offline-First</strong> con <strong>SQLite local</strong>. Diseñada para ayudar a controlar el dinero, registrar movimientos y analizar el flujo de caja, su gran diferenciador es el sistema de escenarios <strong>'What If'</strong>: permite simular y experimentar decisiones futuras (compras, viajes, gastos extraordinarios) sin alterar la situación financiera real hasta que el usuario decida aplicarla.",
     technologies: [
-      { name: "Node.js", color: "#34d399", bg: "rgba(16, 185, 129, 0.15)", border: "rgba(16, 185, 129, 0.4)" },
-      { name: "JavaScript", color: "#ffffff", bg: "rgba(139, 92, 246, 0.15)", border: "rgba(139, 92, 246, 0.4)" },
-      { name: "Chart.js", color: "#c084fc", bg: "rgba(168, 85, 247, 0.15)", border: "rgba(168, 85, 247, 0.4)" },
-      { name: "Express", color: "#60a5fa", bg: "rgba(59, 130, 246, 0.15)", border: "rgba(59, 130, 246, 0.4)" }
+      { name: "React Native", color: "#60a5fa", bg: "rgba(59, 130, 246, 0.15)", border: "rgba(59, 130, 246, 0.4)" },
+      { name: "Expo", color: "#ffffff", bg: "rgba(139, 92, 246, 0.15)", border: "rgba(139, 92, 246, 0.4)" },
+      { name: "TypeScript", color: "#60a5fa", bg: "rgba(59, 130, 246, 0.15)", border: "rgba(59, 130, 246, 0.4)" },
+      { name: "SQLite (Offline-First)", color: "#facc15", bg: "rgba(234, 179, 8, 0.15)", border: "rgba(234, 179, 8, 0.4)" },
+      { name: "NativeWind", color: "#38bdf8", bg: "rgba(56, 189, 248, 0.15)", border: "rgba(56, 189, 248, 0.4)" }
     ],
     features: [
       {
-        title: "Características Clave",
-        icon: "activity",
+        title: "Escenarios 'What If' vs. Realidad",
+        icon: "git-branch",
+        color: "var(--primary-violet)",
+        items: [
+          "Diferenciador principal: evalúa cómo afectarán tus decisiones antes de comprometer tu dinero",
+          "Simulación de posibles gastos, viajes o compras en escenarios independientes",
+          "Conversión opcional de un escenario en Realidad cuando el usuario decide aplicarlo"
+        ]
+      },
+      {
+        title: "Cuentas & Gestión Financiera",
+        icon: "wallet",
+        color: "var(--accent-blue)",
+        items: [
+          "Manejo de efectivo, cuentas bancarias, de ahorro y tarjetas de crédito",
+          "Registro de ingresos, gastos fijos/recurrentes, categorías y beneficiarios",
+          "Transferencias entre cuentas sin alterar el patrimonio total"
+        ]
+      },
+      {
+        title: "Tarjetas de Crédito & Ahorro",
+        icon: "credit-card",
+        color: "#facc15",
+        items: [
+          "Compras con tarjeta generan deuda y sus pagos se procesan como transferencias sin duplicar gastos",
+          "Objetivos de ahorro con seguimiento de progreso y asignación automática por % de ingresos"
+        ]
+      },
+      {
+        title: "Reportes & Análisis de Flujo de Caja",
+        icon: "pie-chart",
         color: "var(--accent-emerald)",
         items: [
-          "Transmisión de métricas vía WebSockets",
-          "Gráficos dinámicos de rendimiento CPU/RAM",
-          "Logs centralizados de infraestructura",
-          "Sistema de alertas tempranas automatizadas"
+          "Cálculo continuo del patrimonio neto (Activos vs Pasivos)",
+          "Análisis visual de gastos por categoría, cuenta y evolución temporal basados en la Realidad"
         ]
       }
     ]
