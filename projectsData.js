@@ -69,29 +69,59 @@ const PROJECTS_DATA = {
 
   dupo: {
     id: "dupo",
-    title: "Dupo — Plataforma Inmobiliaria",
-    imgSrc: "assets/images/realestate.jpg",
-    cardImgSrc: "assets/images/realestate.jpg",
-    projectUrl: "https://github.com/TheYisusCry",
-    cardDesc: "Plataforma inmobiliaria integral para gestión de propiedades en alquiler y venta con mapa interactivo y filtros avanzados.",
-    cardTags: ["React", "Expo", "Supabase", "PostgreSQL"],
-    overview: "<strong>Dupo</strong> es una plataforma inmobiliaria integral desarrollada para la gestión eficiente de propiedades en alquiler y venta. Incluye mapa interactivo, filtros dinámicos, favoritos y autenticación de usuarios sobre una arquitectura relacional altamente optimizada.",
+    title: "DUPO — Duarte Polanco Bienes Raíces",
+    imgSrc: "assets/images/ProyectosRecursos/Logo-de-Duarte-Polanco-Bienes-Raíces.png",
+    cardImgSrc: "assets/images/ProyectosRecursos/Logo-de-Duarte-Polanco-Bienes-Raíces.png",
+    projectUrl: "https://duarte-polanco-rouge-ten.vercel.app/",
+    cardDesc: "Plataforma inmobiliaria Web & Móvil desarrollada para un cliente real. Gestión centralizada de propiedades, usuarios, citas y automatización con WhatsApp.",
+    cardTags: ["React", "React Native", "Node.js", "Supabase", "Vercel"],
+    overview: "<strong>DUPO (Duarte Polanco Bienes Raíces)</strong> es una solución inmobiliaria integral contratada y desarrollada para un cliente real. Resuelve la necesidad empresarial de centralizar la gestión de propiedades (venta y alquiler), usuarios y agendamiento de citas. La plataforma cuenta con una <strong>aplicación web desplegada en Vercel</strong> y una <strong>aplicación móvil construida en React Native con Expo</strong>, compartiendo la misma infraestructura backend y base de datos relacional en <strong>Supabase (Node.js)</strong>.",
     technologies: [
       { name: "React", color: "#60a5fa", bg: "rgba(59, 130, 246, 0.15)", border: "rgba(59, 130, 246, 0.4)" },
-      { name: "Expo", color: "#ffffff", bg: "rgba(139, 92, 246, 0.15)", border: "rgba(139, 92, 246, 0.4)" },
-      { name: "Supabase", color: "#34d399", bg: "rgba(16, 185, 129, 0.15)", border: "rgba(16, 185, 129, 0.4)" },
-      { name: "PostgreSQL", color: "#60a5fa", bg: "rgba(59, 130, 246, 0.15)", border: "rgba(59, 130, 246, 0.4)" }
+      { name: "React Native / Expo", color: "#ffffff", bg: "rgba(139, 92, 246, 0.15)", border: "rgba(139, 92, 246, 0.4)" },
+      { name: "Node.js", color: "#34d399", bg: "rgba(16, 185, 129, 0.15)", border: "rgba(16, 185, 129, 0.4)" },
+      { name: "Supabase (PostgreSQL)", color: "#34d399", bg: "rgba(16, 185, 129, 0.15)", border: "rgba(16, 185, 129, 0.4)" },
+      { name: "Vercel", color: "#ffffff", bg: "rgba(255, 255, 255, 0.12)", border: "rgba(255, 255, 255, 0.3)" }
     ],
     features: [
       {
-        title: "Características Clave",
-        icon: "layout-grid",
+        title: "Gestión de Propiedades",
+        icon: "building-2",
         color: "var(--accent-blue)",
         items: [
-          "Mapa interactivo con geolocalización",
-          "Filtros de búsqueda avanzada por tipo y zona",
-          "Gestión de favoritos e historial de navegación",
-          "Autenticación segura y persistencia relacional"
+          "Catálogo dinámico de propiedades para venta y alquiler",
+          "Visualización detallada con galerías e información específica",
+          "Creación y edición de inmuebles según requerimientos del cliente"
+        ]
+      },
+      {
+        title: "Usuarios y Perfiles",
+        icon: "user-check",
+        color: "var(--primary-violet)",
+        items: [
+          "Registro, creación de cuenta e inicio de sesión",
+          "Gestión de perfil del cliente",
+          "Sincronización en tiempo real entre Web y App Móvil"
+        ]
+      },
+      {
+        title: "Sistema de Citas & WhatsApp",
+        icon: "calendar-check",
+        color: "#facc15",
+        items: [
+          "Programación de citas para consulta de inmuebles",
+          "Integración nativa con WhatsApp",
+          "Generación automática de mensajes prediseñados según la acción de la cita"
+        ]
+      },
+      {
+        title: "Dashboard Administrativo (CMS)",
+        icon: "shield-check",
+        color: "var(--accent-emerald)",
+        items: [
+          "Panel CMS autónomo: modificación de teléfonos, correos y fotos sin tocar código",
+          "Gestión completa de citas: Aceptar, Rechazar, Reprogramar o Cancelar",
+          "Contacto directo con solicitantes y mensajería automatizada"
         ]
       }
     ]
