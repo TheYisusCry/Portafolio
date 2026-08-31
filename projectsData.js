@@ -132,7 +132,7 @@ const PROJECTS_DATA = {
     title: "Monitor — Finanzas Personales & Escenarios 'What If'",
     imgSrc: "assets/images/ProyectosRecursos/monitorICon.png",
     cardImgSrc: "assets/images/ProyectosRecursos/monitorICon.png",
-    projectUrl: "https://github.com/TheYisusCry",
+    projectUrl: "",
     cardDesc: "Aplicación móvil de finanzas personales que permite gestionar la situación financiera real y simular decisiones futuras mediante escenarios 'What If'.",
     cardTags: ["React Native", "Expo", "TypeScript", "SQLite", "NativeWind"],
     overview: "Monitor es una aplicación móvil de finanzas personales desarrollada bajo un enfoque Offline-First con SQLite local. Diseñada para ayudar a controlar el dinero, registrar movimientos y analizar el flujo de caja, su gran diferenciador es el sistema de escenarios 'What If': permite simular y experimentar decisiones futuras (compras, viajes, gastos extraordinarios) sin alterar la situación financiera real hasta que el usuario decida aplicarla.",
