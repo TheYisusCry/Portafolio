@@ -112,7 +112,7 @@
         <!-- Bio Narrative -->
         <div class="about-text">
           <p>
-            Hola, soy Ismael. Actualmente soy estudiante de <span class="purple-highlight">Ingeniería en Sistemas</span> y me desempeño como <span class="purple-highlight">Especialista Web</span>. Mi enfoque principal está en construir software robustos, eficientes y visualmente atractivos.
+            Hola, soy Ismael. Soy estudiante de <span class="purple-highlight">Ingeniería en Sistemas</span> y me desempeño como <span class="purple-highlight">Especialista Web</span>. Mi enfoque principal está en construir software robustos, eficientes y visualmente atractivos.
           </p>
           <p>
             Soy desarrollador Full Stack, con un interés especial en la arquitectura moderna de aplicaciones moviles y sitios web. Me gusta transformar ideas en soluciones elegantes y reales, mediante código limpio,organizado y usando buenas prácticas.
@@ -308,6 +308,7 @@
             <span class="tech-pill">HTML</span>
             <span class="tech-pill">CSS</span>
             <span class="tech-pill">JavaScript</span>
+            <span class="tech-pill">TypeScript</span>
             <span class="tech-pill">React</span>
             <span class="tech-pill">Next.js</span>
             <span class="tech-pill">Tailwind CSS</span>
@@ -447,6 +448,34 @@
                 <button class="btn-project-details" onclick="openProjectModalById('monitor')">
                   <i data-lucide="info"></i> Detalles
                 </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4: WatchWheel -->
+          <div class="project-card">
+            <div class="project-img-wrapper" style="background: rgba(13, 8, 30, 0.8); display: flex; align-items: center; justify-content: center; padding: 1.5rem;">
+              <img src="assets/images/ProyectosRecursos/watchwheel-logo.png" alt="WatchWheel — Decide qué anime ver" class="project-img" style="object-fit: contain; max-height: 110px; width: auto; max-width: 85%;">
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">WatchWheel</h3>
+              <p class="project-desc">
+                Aplicación para decidir qué anime ver mediante una ruleta animada. Conecta tus pendientes de MyAnimeList o crea una selección personalizada con filtros avanzados.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">React Native</span>
+                <span class="project-tag">Expo</span>
+                <span class="project-tag">TypeScript</span>
+                <span class="project-tag">Supabase</span>
+                <span class="project-tag">APIs</span>
+              </div>
+              <div class="project-footer-btns">
+                <button class="btn-project-details" onclick="openProjectModalById('watchwheel')">
+                  <i data-lucide="info"></i> Detalles
+                </button>
+                <a href="https://watchwheel-sigma.vercel.app" target="_blank" class="btn-project-demo">
+                  Ver proyecto
+                </a>
               </div>
             </div>
           </div>
@@ -663,8 +692,8 @@
       
       <div id="modal-project-content">
         <h3 id="modal-project-title" style="font-size: 1.7rem; margin-bottom: 1.2rem; color: #ffffff;"></h3>
-        <div style="width: 100%; text-align: center; margin-bottom: 1.5rem; background: rgba(13, 8, 30, 0.7); border: 1px solid var(--border-card); border-radius: 16px; padding: 1.2rem; display: flex; align-items: center; justify-content: center;">
-          <img id="modal-project-img" src="" alt="" style="max-width: 100%; max-height: 250px; object-fit: contain; border-radius: 10px; display: block;">
+        <div style="width: 100%; text-align: center; margin-bottom: 1.5rem; background: rgba(13, 8, 30, 0.7); border: 1px solid var(--border-card); border-radius: 16px; padding: 0.8rem; display: flex; align-items: center; justify-content: center;">
+          <img id="modal-project-img" src="" alt="" style="width: 100%; max-height: 380px; object-fit: contain; border-radius: 10px; display: block;">
         </div>
         <div id="modal-project-desc" style="color: var(--text-muted); font-size: 1rem; line-height: 1.7; margin-bottom: 1.8rem;"></div>
         <div style="display: flex; justify-content: flex-end; gap: 1rem; flex-wrap: wrap;">

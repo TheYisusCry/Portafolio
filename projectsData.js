@@ -183,5 +183,67 @@ const PROJECTS_DATA = {
         ]
       }
     ]
+  },
+
+  watchwheel: {
+    id: "watchwheel",
+    title: "WatchWheel — Decide qué anime ver",
+    imgSrc: "assets/images/ProyectosRecursos/watchwheel-preview.png",
+    cardImgSrc: "assets/images/ProyectosRecursos/watchwheel-logo.png",
+    projectUrl: "https://watchwheel-sigma.vercel.app",
+    cardDesc: "Aplicación para decidir qué anime ver mediante una ruleta animada. Conecta tus pendientes de MyAnimeList o crea una selección personalizada con filtros avanzados.",
+    cardTags: ["React Native", "Expo", "TypeScript", "Supabase", "APIs"],
+    overview: "WatchWheel ayuda a resolver la indecisión al elegir el próximo anime. Desarrollada con React Native, Expo y TypeScript, combina una interfaz adaptable a móviles y web con una ruleta animada y un sistema de selección que reduce las repeticiones recientes. Permite explorar el catálogo, construir una ruleta personalizada sin registrarse o conectar MyAnimeList para importar los títulos pendientes de Plan to Watch. Utiliza Supabase para autenticación, perfiles y funciones backend, e incluye acceso con Google y una interfaz disponible en español e inglés.",
+    technologies: [
+      { name: "React Native / Expo", color: "#60a5fa", bg: "rgba(59, 130, 246, 0.15)", border: "rgba(59, 130, 246, 0.4)" },
+      { name: "TypeScript", color: "#60a5fa", bg: "rgba(59, 130, 246, 0.15)", border: "rgba(59, 130, 246, 0.4)" },
+      { name: "Supabase (PostgreSQL / Auth)", color: "#34d399", bg: "rgba(16, 185, 129, 0.15)", border: "rgba(16, 185, 129, 0.4)" },
+      { name: "MyAnimeList API / OAuth 2.0", color: "#c084fc", bg: "rgba(168, 85, 247, 0.15)", border: "rgba(168, 85, 247, 0.4)" },
+      { name: "AniList API / GraphQL", color: "#38bdf8", bg: "rgba(56, 189, 248, 0.15)", border: "rgba(56, 189, 248, 0.4)" },
+      { name: "AsyncStorage", color: "#facc15", bg: "rgba(234, 179, 8, 0.15)", border: "rgba(234, 179, 8, 0.4)" },
+      { name: "Vercel", color: "#ffffff", bg: "rgba(255, 255, 255, 0.12)", border: "rgba(255, 255, 255, 0.3)" }
+    ],
+    features: [
+      {
+        title: "Ruleta para Decidir Qué Ver",
+        icon: "shuffle",
+        color: "var(--primary-violet)",
+        items: [
+          "Carrusel animado con selección aleatoria de anime",
+          "Memoria de ganadores recientes para reducir repeticiones",
+          "Velocidad de giro y efectos de sonido configurables"
+        ]
+      },
+      {
+        title: "Catálogo y Selección Personalizada",
+        icon: "search",
+        color: "var(--accent-blue)",
+        items: [
+          "Búsqueda por título y filtros por género, temática, demografía y puntuación",
+          "Creación de una ruleta propia sin necesidad de registrarse",
+          "Selección individual o por lotes y guardado local de la ruleta"
+        ]
+      },
+      {
+        title: "Integración con MyAnimeList",
+        icon: "link",
+        color: "#facc15",
+        items: [
+          "Vinculación de cuenta mediante OAuth 2.0 con PKCE",
+          "Importación de animes pendientes de la lista Plan to Watch",
+          "Renovación de tokens gestionada mediante funciones backend"
+        ]
+      },
+      {
+        title: "Cuentas y Experiencia de Usuario",
+        icon: "user-check",
+        color: "var(--accent-emerald)",
+        items: [
+          "Registro e inicio de sesión con credenciales o Google",
+          "Recuperación de contraseña y gestión de sesiones activas",
+          "Interfaz adaptable a móviles y web, disponible en español e inglés"
+        ]
+      }
+    ]
   }
 };
